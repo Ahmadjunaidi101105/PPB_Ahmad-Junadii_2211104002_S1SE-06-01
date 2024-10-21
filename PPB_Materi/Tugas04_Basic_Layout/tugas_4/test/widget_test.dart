@@ -16,7 +16,7 @@ void main() {
 
   testWidgets('Check if the green circle is displayed',
       (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+    // Build/ our app and trigger a frame.
     await tester.pumpWidget(MyApp());
 
     // Verify that the green circle is displayed.
