@@ -19,6 +19,7 @@ class DatabaseHelper {
   // Inisialisasi database
   Future<Database> _initDatabase() async {
     String path = join(await getDatabasesPath(), 'biodata.db'); // Path database
+    print('Database Path: $path'); // Debugging database path
     return await openDatabase(
       path,
       version: 1,
@@ -37,32 +38,35 @@ class DatabaseHelper {
         hobi TEXT
       )
     ''');
+    print('Tabel biodata berhasil dibuat');
   }
 
   // Fungsi CRUD
   // Insert data
   Future<int> insert(Map<String, dynamic> row) async {
     Database db = await database;
-    return await db.insert(
-        'my_table', row); // Ganti 'my_table' sesuai nama tabel di SQLite Anda.
+    print('Menyimpan data: $row');
+    return await db.insert('biodata', row);
   }
 
+  // Query semua data
   Future<List<Map<String, dynamic>>> queryAllRows() async {
     Database db = await database;
-    return await db.query(
-        'my_table'); // Ganti 'my_table' sesuai nama tabel di SQLite Anda.
+    List<Map<String, dynamic>> result = await db.query('biodata');
+    print('Data yang dimuat: $result'); // Debugging loaded data
+    return result;
   }
 
   // Update data
   Future<int> update(Map<String, dynamic> data) async {
-    final db = await database;
+    Database db = await database;
     int id = data['id'];
     return await db.update('biodata', data, where: 'id = ?', whereArgs: [id]);
   }
 
   // Delete data
   Future<int> delete(int id) async {
-    final db = await database;
+    Database db = await database;
     return await db.delete('biodata', where: 'id = ?', whereArgs: [id]);
   }
 }
