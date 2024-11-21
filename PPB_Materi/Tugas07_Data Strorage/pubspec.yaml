@@ -1,0 +1,26 @@
+name: shared_preferences_demo
+description: "A new Flutter project."
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' 
+
+# The following defines the version and build number for your application.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.0 <3.0.0" # Pastikan sesuai dengan versi Dart Anda
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.0.18
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
