@@ -1,0 +1,41 @@
+name: guided_pert12
+description: "A new Flutter project."
+publish_to: 'none' # Prevent accidental publishing to pub.dev.
+
+# Application versioning
+version: 1.0.0+1
+
+# Dart SDK version
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+# Project dependencies
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  google_maps_flutter: ^2.2.0 # Versi stabil dari Google Maps Flutter
+  location: ^5.0.0 # Pastikan sesuai dengan kompatibilitas proyek
+  google_maps_webservice: ^0.0.20-nullsafety.5 # Untuk integrasi Place Picker
+  geolocator: ^9.0.2 # Untuk lokasi pengguna
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+# Flutter-specific configurations
+flutter:
+  uses-material-design: true
+
+  # Assets configuration (Uncomment and add assets if needed)
+  # assets:
+  #   - images/example_image.png
+  #   - images/example_icon.png
+
+  # Fonts configuration (Uncomment and add fonts if needed)
+  # fonts:
+  #   - family: ExampleFont
+  #     fonts:
+  #       - asset: fonts/ExampleFont-Regular.ttf
+  #       - asset: fonts/ExampleFont-Bold.ttf
